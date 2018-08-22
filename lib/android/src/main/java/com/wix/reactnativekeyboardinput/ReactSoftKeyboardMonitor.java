@@ -22,6 +22,9 @@ public class ReactSoftKeyboardMonitor implements ReactScreenMonitor.Listener {
         @Override
         public void onGlobalLayout() {
             Integer viewportVisibleHeight = getViewportVisibleHeight();
+            
+            refreshKeyboardHeight();
+            
             if (viewportVisibleHeight.equals(mLastViewportVisibleHeight)) {
                 return;
             }
