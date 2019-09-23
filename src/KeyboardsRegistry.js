@@ -1,5 +1,4 @@
 import {AppRegistry} from 'react-native';
-import _ from 'lodash';
 import EventEmitterManager from './utils/EventEmitterManager';
 
 /*
@@ -20,7 +19,7 @@ export default class KeyboardRegistry {
   static eventEmitter = new EventEmitterManager();
 
   static registerKeyboard = (componentID, generator, params = {}) => {
-    if (!_.isFunction(generator)) {
+    if (typeof generator !== 'function') {
       console.error(`KeyboardRegistry.registerKeyboard: ${componentID} you must register a generator function`);//eslint-disable-line
       return;
     }
@@ -38,7 +37,7 @@ export default class KeyboardRegistry {
   };
 
   static getKeyboards = (componentIDs = []) => {
-    const validKeyboardIDs = _.intersection(componentIDs, Object.keys(KeyboardRegistry.registeredKeyboards));
+    const validKeyboardIDs = intersection(componentIDs, Object.keys(KeyboardRegistry.registeredKeyboards));
     return getKeyboardsWithIDs(validKeyboardIDs);
   };
 
