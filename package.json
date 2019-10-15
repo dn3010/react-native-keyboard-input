@@ -31,7 +31,7 @@
     "e2e": "detox test"
   },
   "dependencies": {
-    "react-native-keyboard-tracking-view": "^5.5.0"
+    "react-native-keyboard-tracking-view": "github:dn3010/react-native-keyboard-tracking-view#8865a81e7d8825d82842121fed3aedf0c0978320"
   },
   "peerDependencies": {
     "react": "^16.6.0-alpha.8af6728",
